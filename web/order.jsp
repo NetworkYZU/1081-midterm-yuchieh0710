@@ -17,7 +17,7 @@
         question 3 (10%)
         將表單的目標設定爲 addOrder，使用 post
         -->
-        <form>
+        <form method="POST" action="addOrder">
             <select name="food">
                 <option value="氧氣草">氧氣草</option>
                 <option value="惡魔果實">惡魔果實</option>
@@ -25,7 +25,13 @@
                 <option value="炸雞">炸雞</option>
                 <option value="哥吉拉">哥吉拉</option>
             </select>
-            <input type="submit"/>
+            <%
+                String t=(String)session.getAttribute("food");
+                if(t==null){
+                    t="";
+                }
+            %>
+            <input type="submit" name = "t"/>
         </form>
        
     </body>
